@@ -1,0 +1,25 @@
+<h1>Iniciar sesión</h1>
+<br> <br>
+
+<form  action="/api/sessions/signup" method="post"  id="Form SignUp">
+
+  Nombre:
+  <input type="string" name="name" id="name" /><br>
+
+  Apellido:
+  <input type="string" name="last_name" id="last_name" /><br>
+
+  Mail:
+  <input type="email" name="email" id="email" /><br>
+  
+  Edad:
+  <input type="number" name="age" id="age" /><br>
+
+  Password:
+  <input type="password" name="password" id="password" /><br><br>
+
+  <button onclick="location.href='/api/sessions/auth/github'">GITHUB</button>
+
+  <input type="submit" value="ENVIAR" />
+
+</form>

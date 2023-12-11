@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 1rem;
+        }
+
+        label {
+            font-size: 0.875rem;
+            font-weight: medium;
+            color: #1f2937;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.375rem;
+            margin-top: 0.25rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.25rem;
+            color: #1f2937;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4f46e5;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            background-color: #6366f1;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4f46e5;
+        }
+
+        .oauth-link {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .oauth-link a {
+            font-weight: bold;
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .oauth-link a:hover {
+            color: #4f46e5;
+        }
+
+        .password-reset-link {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .password-reset-link a {
+            font-weight: bold;
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .password-reset-link a:hover {
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Iniciar sesión</h1>
+
+    <form action="/api/sessions/login" method="post" id="Form Login">
+        <label for="email">Mail:</label>
+        <input type="email" name="email" id="email">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+
+        <input type="submit" value="Login">
+    </form>
+
+    <div class="oauth-link">
+        <botoom><a href="/api/sessions/auth/github">GITHUB</a></botoom>
+    </div>
+
+    <div class="password-reset-link">
+        <botoom><a href="/api/views/restaurar">Restaurar contraseña</a></botoom>
+    </div>
+</div>
+
+</body>
+</html>

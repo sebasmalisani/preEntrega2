@@ -1,45 +1,52 @@
-<div class="box">
-    <h1>Productos</h1>
-    <hr>
-    <div class="products-form">
-        <h2>Crear Producto</h2>
-        <form>
-            <label for="title">Título</label>
-            <input name="title" id="title" type="text">
 
-            <label for="description">Descripción</label>
-            <input name="description" id="description" type="text">
+<h2>Agregar producto</h2><br><br>
+<form id="Form agregar producto">
 
-            <label for="code">Código</label>
-            <input name="code" id="code" type="text">
+  Titulo:
+  <input type="string" name="title" id="title" /> <br>
 
-            <label for="price">Precio</label>
-            <input name="price" id="price" type="number">
+  Descripción:
+  <input type="string" name="description" id="description" /><br>
 
-            <label for="stock">Stock</label>
-            <input name="stock" id="stock" type="number">
+  Status:
+  <input type="boolean" name="status" id="status" /><br>
 
-            <label for="category">Categoria</label>
-            <input name="category" id="category" type="text">
+  Precio:
+  <input type="number" name="price" id="price" /><br>
 
-            <button id="button-create" onclick="createProduct(event)">Crear</button>
-        </form>
-    </div>
+  Código:
+  <input type="string" name="code" id="code" /><br>
 
-    <hr>
+  Stock:
+  <input type="number" name="stock" id="stock" /><br>
 
-    <div class="products-box">
-        {{#each products}}
-            <div class="product-card">
-                <h3>{{this.title}}</h3>
-                <hr>
-                <p>Categoria: {{this.category}}</p>
-                <p>Descripción: {{this.description}}</p>
-                <p>Precio: $ {{this.price}}</p>
-                <button id="button-delete" onclick="deleteProduct('{{this._id}}')">Eliminar</button>
-            </div>
-        {{/each}}
-    </div>
+  Thumbnails:
+  <input type="string" name="thumbnails" id="thumbnails" /><br>
+
+  <input type="submit" value="ENVIAR" />
+
+</form>
+
+<br></br>
+
+<h2>Eliminar producto</h2><br><br>
+<form id="Form delete product">
+
+  Title:
+  <input type="string" name="title" id="titleDelete" /><br>
+
+  Id:
+  <input type="string" name="Id" id="idDelete" /><br>
+
+  <input type="submit" value="ENVIAR PRODUCTO A ELIMINAR" />
+
+</form>
+
+<br></br>
+
+<h2>Lista de productos</h2>
+<div id="divRealTimeProduct">
+
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
